@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <h1>Form in HTML</h1>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label>Name:</label><br>
+                    <div>
+                        <input type="text" name="name" id="name">
+                        <span class="errorMessage" id="nameError"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Password:</label><br>
+
+                    <div>
+                        <input type="text" name="password" id="password">
+                        <span class="errorMessage" id="passwordError"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label><br>
+                    <div>
+                        <input type="text" name="email" id="email">
+                        <span class="errorMessage" id="emailError"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Phone:</label><br>
+                    <div>
+                        <input type="text" name="phone" id="phone">
+                        <span class="errorMessage" id="phoneError"></span>
+                    </div>
+                </div>
+            </form>
+            <button type="button" id="submitBtn">Submit</button>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript">
+    const submitBtn = document.getElementById("submitBtn");
+    submitBtn.addEventListener("click", function (e) {
+        submitForm()
+    })
+
+    function submitForm() {
+        var name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const phone = document.getElementById("phone");
+        const password = document.getElementById("password")
+        const nameError = document.getElementById("nameError")
+        const emailError = document.getElementById("emailError")
+        const phoneError = document.getElementById("phoneError")
+        const passwordError = document.getElementById("passwordError")
+        let nameVal = name.value;
+        let emailVal = email.value;
+        let phoneVal = phone.value;
+        let passwordVal = password.value;
+        validateName(nameVal, nameError,name)
+        validateEmail(emailVal, emailError,email)
+        validatePassword(passwordVal, passwordError,password)
+        validatePhone(phoneVal, phoneError,phone)
+
+    }
+    function validatePhone(phoneVal, phoneError,name) {
+        if (phoneVal.length == 0) {
+            phoneError.innerText = "Phone is required"
+            phone.style.border = "1px solid red"
+        }
+        else if (phoneVal.length != 10) {
+            phoneError.innerText = "Phone length must be greater 10"
+            phone.style.border = "1px solid red"
+            phone.style.color = "red"
+        }
+        else {
+            phoneError.innerText = "";
+            phone.style.border = "1px solid green";
+            phone.style.color = "black"
+        }
+    }
+    function validatePassword(passwordVal, passwordError,password) {
+        if (passwordVal.length == 0) {
+            passwordError.innerText = "Password is requred";
+            password.style.border = "1px solid red";
+        }
+        else if (passwordVal.length < 6) {
+            password.style.border = "1px solid black";
+            password.style.color = "red"
+            passwordError.innerText = "Password length must be atleast 8 characters";
+        }
+        else {
+            password.style.border = "1px solid green";
+            password.style.color = "black"
+            passwordError.innerText = "";
+        }
+    }
+    function validateEmail(emailVal, emailError,email) {
+        let a = emailVal.indexOf("@");
+        let b = emailVal.indexOf(".");
+        if (emailVal.length == 0) {
+            emailError.innerText = "Email is required"
+            email.style.border = "1px solid red";
+        }
+        else if (a == -1 || b == -1 || +1 == b || emailVal.length - 1 == b) {
+            emailError.innerText = "Invalid email address"
+            email.style.border = "1px solid red";
+            email.style.color = "red"
+        }
+        else {
+            emailError.innerText = ""
+            email.style.border = "1px solid green";
+            email.style.color = "black"
+        }
+    }
+    function validateName(nameVal, nameError,name) {
+        if (nameVal.length == 0) {
+            nameError.innerText = "Name is required";
+            name.style.border = "1px solid red"
+        }
+        else if (nameVal.length < 5 || nameVal.lenngth > 15) {
+            nameError.innerText = ""
+            nameError.innerText = "Name length should be between 5 and 15";
+            name.style.color = "red"
+            name.style.border = "1px solid red"
+        }
+        else {
+            let nameLength = nameVal.length
+            for (let i = 0; i < nameLength; i++) {
+                if (!isNaN(nameVal[i])) {
+                    nameError.innerText = "Name must not contains a number";
+                }
+                else {
+                    nameError.innerText = ""
+                    name.style.color = "black"
+                    name.style.border = "1px solid green"
+                }
+            }
+        }
+    }
+</script>
+
+</html>
