@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+}
+.container {
+  background-color: #003882;
+  width: 500px;
+  margin: 40px auto;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px 30px;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 12px 12px 5px 1px rgb(202, 195, 195);
+}
+.container h1 {
+  margin: 40px;
+  text-transform: uppercase;
+}
+.container .form-group {
+  margin: 10px;
+  padding: 10px;
+  width: 80%;
+}
+.container .form-group label {
+  font-size: 18px;
+}
+.container .form-group input {
+  margin-top: 5px;
+  padding: 10px;
+  width: 100%;
+  border: none !important;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.container .btn-group {
+  margin-top: 40px;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  position: relative;
+  left: 30%;
+}
+.container .btn-group input {
+  position: relative;
+  color: white;
+  background-color: black;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+}
+.container-fluid {
+  width: 70%;
+  margin: auto !important;
+  padding: 30px;
+}
+table,
+tr,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+}
+.top-btn {
+  color: white;
+  background-color: rgb(51, 212, 88);
+  padding: 10px 30px;
+  border: none !important;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.top-btn a {
+  color: white;
+  text-decoration: none;
+}
