@@ -13,7 +13,17 @@
     <p id="p1">Click button to change my content</p>
     <button onclick="changeContent()">Click to show alert</button>
     <p>hover the following button alert message</p>
-    <button onmouseenter="hoverEvent()">Click to show alert</button>
+    <button onmouseenter="hoverEvent()">hover to show alert</button>
+    <p>hover the following button alert message</p>
+    <button onmouseout="mouseOutEvent()">mouse to show alert</button>
+    <p>enter the value in following input button to execute onchange event</p>
+
+    <input type="text" onchange="oneChangeEvent(this.value)" id="name" />
+    <p>keyup events events</p>
+    <p>Name:</p>
+    <p id="nameholder"></p>
+    <input type="text" onkeyup="onKeyupEvent(this.value)" id="name" />
+
 
 </body>
 <script type="text/javascript" src="../js/events.js"></script>

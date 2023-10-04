@@ -9,3 +9,16 @@ function changeContent() {
 function hoverEvent() {
   alert("you hover the button");
 }
+function mouseOutEvent() {
+  alert("mouse out the button");
+}
+
+function oneChangeEvent(value) {
+  console.log("one change event");
+  console.log("name :", value);
+}
+function onKeyupEvent(value) {
+  console.log(value);
+  let nameHolder = document.getElementById("nameholder");
+  nameHolder.innerHTML = value;
+}
