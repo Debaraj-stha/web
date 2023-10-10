@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Handling cookie in js</p>
+    <div id="cookie-container"></div>
+</body>
+<script type="text/javascript">
+    function setCoolie() {
+        var now = Date.now() + 86400;
+        console.log(now)
+        document.cookie = `name=devraj;expires=${now}`;
+        document.cookie = `username=John Doe; expires=Thu, 18 Dec 2023 12:00:00 UTC`
+    }
+    async function loadCookies() {
+        var now = Date.now();
+
+        let cookies = await document.cookie.split(";")
+        let myCookies = {}
+        for (var i = 0; i < cookies.length; i++) {
+
+            var cookie = cookies[i].split("=")
+
+            myCookies[cookie[0]] = cookie[1]
+        }
+        console.log(myCookies)
+        const length = Object.keys(myCookies).length;
+        let cookiecontainer = document.getElementById("cookie-container")
+        if (length == 0 || length == undefined) {
+            cookiecontainer.innerHTML = "no cookies found"
+            retturn;
+        }
+        for (var key in myCookies) {
+            let p = document.createElement("p")
+
+            p.innerHTML = key + ":" + myCookies[key]
+            console.log(myCookies[0])
+            cookiecontainer.appendChild(p)
+        }
+    }
+    setCoolie()
+    loadCookies()
+
+</script>
+
+</html>
