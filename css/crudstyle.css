@@ -26,7 +26,8 @@
 .container .form-group label {
   font-size: 18px;
 }
-.container .form-group input {
+.container .form-group input,
+.container .form-group option {
   margin-top: 5px;
   padding: 10px;
   width: 100%;
@@ -81,4 +82,7 @@ td {
 .top-btn a {
   color: white;
   text-decoration: none;
+}
+select {
+  width: 100%;
 }
