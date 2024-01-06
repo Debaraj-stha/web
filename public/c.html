@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {}
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td rowspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <!-- Inner table without thead -->
+                    <table cellpadding="40px" cellspacing="20px" 20px border="1">
+                        <tbody>
+                            <tr>
+                                <td>Inner Table Data 1</td>
+
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <ul>
+        <li>hhh</li>
+        <li>
+            <table border="1">
+                <tr>
+                    <th>hh</th>
+                    <th>99</th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td>ggg</td>
+                        <td>222</td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+</body>
+<script type="text/javascript">
+    var date = new Date();
+    date.setMonth(date.getMonth() + 1);
+    document.cookie = "username=manish raj;expires=" + date + ";"
+    document.cookie = "name=devraj shrestha;expires=" + date + ";"
+    let cookies = {}
+    let myCookies = document.cookie.split(";")
+    for (var i = 0; i < myCookies.length; i++) {
+        let cookie = myCookies[i].split("=")
+
+        cookies[cookie[0]] = cookie[1]
+    }
+    let div = document.getElementsByTagName('div')
+    for (c in cookies) {
+        console.log(c)
+        console.log(cookies[c])
+    }
+
+</script>
+
+</html>

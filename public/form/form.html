@@ -23,6 +23,14 @@
             width: 80px;
         }
 
+        .selectBox {
+            width: 200px;
+        }
+
+        select {
+            width: 100%;
+        }
+
         .form-group input {
             border: 2px solid black;
             padding: 5px;
@@ -59,10 +67,72 @@
                 <input type="text" id="email" placeholder="Email">
             </div>
         </div>
+        <div class="form-group row">
+            <div class="left">
+                <label for=" gender">Gender</label>
+            </div>
+            <div class="right">
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+
+
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="left">
+                <label for=" hobby">Hobby:</label>
+            </div>
+            <div class="right">
+                <input type="checkbox" name="checkbox" value="Reading">Reading<br>
+                <input type="checkbox" name="checkbox" value="Listenig music">Listenig music<br>
+                <input type="checkbox" name="checkbox" value="Reading">Reading<br>
+                <input type="checkbox" name="checkbox" value="Listenig music">Listenig music
+
+
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="left">
+                <label for=" hobby">Country:</label>
+            </div>
+            <div class="right selectBox">
+                <select name="country">
+                    <option value="nepal">Nepal</option>
+                    <option value="India">India</option>
+                    <option value="China">China</option>
+                </select>
+
+
+            </div>
+        </div>
         <div class="btn">
-            <input type="submit" value="Login" name="submit">
+            <input type="submit" value="Login" name="submit" onclick="submitForm()">
         </div>
     </div>
 </body>
+<script>
+    function submitForm() {
+        console.log("clicked");
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        console.log(name + " " + email)
+        if (name == "" || email == "") {
+            console.log("all fields are required");
+            return;
+        }
+        if (name.length > 15 || name.length < 3) {
+            console.log("invalid name length,it should be between 3 and 15");
+            return;
+        }
+        const indexOfa = email.lastIndexOf('@');
+        const indexOfDot = email.lastIndexOf('.');
+        if (indexOfDot == -1 || indexOfa == -1 || email.length == indexOfDot + 1) {
+            console.log("invalid email address")
+            return;
+        }
+        console.log("form is valid");
+        
+    }
+</script>
 
 </html>

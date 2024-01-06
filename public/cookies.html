@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="=width=device-width,initial-scale=1">
+</head>
+<title>cookies in js</title>
+<style>
+    .container {
+        width: 300px;
+        margin: auto;
+        background-color: red;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .container .row {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .row .column {
+        justify-content: left;
+        margin: 0 0 10px 0;
+    }
+
+    .label {
+        width: 100px;
+    }
+</style>
+
+<body>
+    <div id="wrapper">
+
+    </div>
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="column label">
+                    <label for="name">Name:</label>
+                </div>
+                <div class="column">
+                    <input type="text" name="name" placeholder="Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column label">
+                    <label for="name">password:</label>
+                </div>
+                <div class="column">
+                    <input type="password" name="name" placeholder="password">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column label">
+                    <label for="name">Email:</label>
+                </div>
+                <div class="column">
+                    <input type="email" name="name" placeholder="email">
+                </div>
+            </div>
+        </form>
+        <div>
+            <p>h<sub>2</sub>o</p>
+            <p>a<sup>2</sup></p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    function setCookies() {
+        document.cookie = "name=devraj shrestha,expires=2024";
+        document.cookie = "address=haran nepal";
+    }
+    async function loadCookies() {
+        let cookies = document.cookie.split(";");
+        console.log(cookies)
+        let myCookies = {}
+        for (i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].split("=");
+            console.log(cookie)
+            myCookies[cookie[0]] = cookie[1];
+        }
+        console.log("myCookies", myCookies)
+        let wrapper = document.getElementById("wrapper")
+        for (c in myCookies) {
+            console.log(c)
+            let p = document.createElement("p");
+            p.innerHTML = `${c} is ${myCookies[c]}`
+            wrapper.appendChild(p)
+        }
+    }
+    setCookies();
+    loadCookies();
+</script>
+
+</html>

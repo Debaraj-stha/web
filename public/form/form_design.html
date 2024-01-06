@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Form design</title>
+    <link rel="stylesheet" href="../css/form_design.css">
+</head>
+
+<body>
+    <div class="container">
+        <form name="form">
+            <div class="form_field">
+                <div class="left">
+                    <label for="name">Name</label>
+                </div>
+                <div class="right">
+                    <input type="text" name="name">
+                </div>
+            </div>
+            <div class="form_field">
+                <div class="left">
+                    <label for="email">Email</label>
+                </div>
+                <div class="right">
+                    <input type="text" name="email">
+                </div>
+            </div>
+
+            <div class="form_field">
+                <div class="left">
+                    <label for="password">password</label>
+                </div>
+                <div class="right">
+                    <input type="text" name="password">
+                </div>
+            </div>
+            <div class="form_field">
+                <div class="left">
+                    <label for="hobby">Hobby</label>
+                </div>
+                <div class="right">
+                    <div class="item">
+                        <input type="checkbox" id="music" name="hobby">
+                        <label for="music">Listening music</label>
+                    </div>
+                    <div class="item">
+                        <input type="checkbox" id="play" name="hobby">
+                        <label for="play">Playing Guitar</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form_field">
+                <div class="left">
+                    <label for="hobby">Gender</label>
+                </div>
+                <div class="right">
+                    <div class="item">
+                        <input type="radio" id="male" name="gender">
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="item">
+                        <input type="radio" id="female" name="gender">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form_field">
+                <div class="left">
+                    <label for="hobby">Country</label>
+                </div>
+                <div class="right">
+                    <select name="country">
+                        <option value="nepal">Nepal</option>
+                        <option value="us">Us</option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn">
+                <button type="submit" name="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script type="text/javascript">
+    let form = document.forms["form"];
+    form.addEventListener("submit", function (e) {
+
+        let name = document.getElementsByName("name")[0].value;
+        let gender = document.getElementsByName("gender");
+        let hobby = document.getElementsByName("hobby")
+        let country = document.getElementsByName("country")
+        let email = document.getElementsByName("email")[0].value
+        let password = document.getElementsByName("password")[0].value
+        if (name == "") {
+            alert("NMae is required ")
+            return
+        }
+        else if (name.length < 5 || name.length > 20) {
+            alert("Invalid name length")
+            return
+        }
+        if (password == "") {
+            alert("password is required ")
+            return
+        }
+        else if (password.length < 5 || password.length > 20) {
+            alert("Invalid password length")
+            return
+        }
+        if (email == "") {
+            alert("email is required ")
+            return
+        }
+        else {
+            let atpos = email.indexOf("@")
+            let dotpos = email.indexOf(".")
+            if (atpos == -1 || dotpos == -1 || (dotpos == email.length - 1) || dotpos < atpos) {
+                alert("Invalid email")
+                return
+            }
+            else {
+                console.log("valid email address")
+            }
+
+        }
+        let genderVal = ""
+        let hobbyVal = []
+        let countryVal = ""
+        for (let i = 0; i < hobby.length; i++) {
+            if (hobby[i].checked) {
+                hobbyVal.push(hobby[i].value)
+            }
+        }
+        for (let i = 0; i < gender.length; i++) {
+            if (gender[i].checked) {
+                genderVal = gender[i].value
+            }
+        }
+        console.log(genderVal, hobbyVal)
+
+        console.log(country[0].value)
+    })
+</script>
+
+</html>

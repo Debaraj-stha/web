@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mail>
+<to>@example.com</to>
+<from>@example.com</from>
+<subject>Hello</subject>
+<message>Hello world</message>
+</mail>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE mail [
+<!ELEMENT mail(to,from,subject,message)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT subject (#PCDATA)>
+<!ELEMENT message (#PCDATA)>
+<!ATLEAST mail isSend (true/false) "false">
+]>
+<mail isSend="false">
+<to>xyz@example.com</to>
+<from>xyz@example.com</from>
+<subject>Testing mail</subject>
+<message>hello world</message>
+</mail>
