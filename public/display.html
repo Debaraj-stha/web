@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <style>
+        /* Block-level Element */
+        div {
+            display: block;
+            width: 200px;
+            height: 100px;
+            /* background-color: #3498db; */
+
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Inline Element */
+        span {
+            display: inline;
+            background-color: #2ecc71;
+            color: red;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        .flex {
+            background-color: transparent;
+        }
+
+        /* Flexbox Container */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            /*      background-color: #f39c12;
+            padding: 10px;*/
+        }
+
+        .flex-item {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Block-level Element -->
+    <input type="number">
+    <div>This is a block-level element.</div>
+    <div>Another block-level element.</div>
+
+    <!-- Inline Element -->
+    <p>This is an <span>inline</span> element.</p>
+    <p>Another <span>inline</span> element.</p>
+
+    <!-- Flexbox Container -->
+    <div class="flex-container .flex">
+        <div class="flex-item">Flex Item 1</div>
+        <div class="flex-item">Flex Item 2</div>
+        <div class="flex-item">Flex Item 3</div>
+    </div>
+</body>
+
+</html>
